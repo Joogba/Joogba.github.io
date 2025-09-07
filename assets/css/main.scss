@@ -7,6 +7,9 @@
 /* 글 전체 기본 폭(본문)과 wide일 때의 최대 폭 */
 $content-width: 960px;   /* 기본 ~800px → 960px 정도 권장 */
 $max-width: 1280px;      /* classes: wide 일 때 적용되는 최대폭 */
+/* 본문 + 사이드바 너비 설정 */
+$right-sidebar-width: 260px;     /* TOC 칼럼 */
+$right-sidebar-width-narrow: 220px;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -24,3 +27,6 @@ $max-width: 1280px;      /* classes: wide 일 때 적용되는 최대폭 */
 
 /* (선택) 코드 블록이 크다면 */
 .highlighter-rouge pre, pre.highlight { font-size: 0.9rem; }
+
+/* (선택) 스티키 위치 미세 조정 */
+.sidebar__right.sticky { top: 72px; }
