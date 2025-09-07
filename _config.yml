@@ -271,12 +271,14 @@ defaults:
       comments:
       share: true
       related: true
+      classes: wide
 
   # _projects 기본값
   - scope: { path: "", type: projects }
     values:
       layout: single
       author_profile: true
+      classes: wide
 
   # (선택) pages에도 author 박스 보이게 하고 싶다면
   # - scope: { path: "", type: pages }
