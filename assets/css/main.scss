@@ -6,3 +6,17 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* 본문 공통 폰트 크기/행간 살짝 줄이기 */
+.page__content {
+  font-size: 0.95rem;   /* 기본 1rem → 0.95rem */
+  line-height: 1.75;
+}
+
+/* (선택) 제목도 약간 줄이기 */
+.page__content h1 { font-size: 1.75rem; }
+.page__content h2 { font-size: 1.35rem; }
+.page__content h3 { font-size: 1.15rem; }
+
+/* (선택) 코드 블록이 크다면 */
+.highlighter-rouge pre, pre.highlight { font-size: 0.9rem; }
