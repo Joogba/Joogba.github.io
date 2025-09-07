@@ -4,7 +4,7 @@ title: "About"
 permalink: /about/
 author_profile: true
 classes: wide   # 선택: 폭 넓히기
-toc: true       # 선택: 우측 목차
+toc: false      # 선택: 우측 목차
 ---
 
 # 👋 소개(Introduce)
