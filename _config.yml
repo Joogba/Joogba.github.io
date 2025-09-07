@@ -102,52 +102,37 @@ analytics:
 
 # Site Author
 author:
-  name             : "Joogba"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Yeah~."
-  location         : "Pyeong Taek, GyeongGi"
-  email            : "sjk980802@gmail.com"
+  name    : "Joogba"
+  avatar  : "/assets/images/bio-photo.jpg"   # ← 이미지 업로드 후 절대경로로
+  bio     : "프로그래머"
+  location: "Pyeongtaek, Gyeonggi"
+  email   : "tjdwn0802@naver.com"
   links:
+    - label: "GitHub"
+      icon : "fab fa-fw fa-github"
+      url  : "https://github.com/Joogba"
+    - label: "Email"
+      icon : "fas fa-fw fa-envelope"
+      url  : "mailto:tjdwn0802@naver.com"
+    - label: "Blog"
+      icon : "fas fa-fw fa-link"
+      url  : "https://joogba.github.io"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:sjk980802@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/Joogba"
+      url: "mailto:tjdwn0802@naver.com"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://www.instagram.com/jrogba___/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
+      icon : "fab fa-fw fa-github"
+      url  : "https://github.com/Joogba"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://www.instagram.com/jrogba___/"
 
 
 # Reading Files
