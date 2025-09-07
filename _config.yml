@@ -272,6 +272,8 @@ defaults:
       share: true
       related: true
       classes: wide
+      toc: true
+      toc_sticky: true
 
   # _projects 기본값
   - scope: { path: "", type: projects }
@@ -279,6 +281,8 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
+      toc: true
+      toc_sticky: true
 
   # (선택) pages에도 author 박스 보이게 하고 싶다면
   # - scope: { path: "", type: pages }
