@@ -270,3 +270,13 @@ defaults:
       comments: # true
       share: true
       related: true
+
+
+collections:
+  projects:
+    output: true
+
+defaults:
+  - scope: { path: "", type: projects }
+    values:
+      layout: single          # 각 카드 클릭 시 열릴 상세 페이지 레이아웃
