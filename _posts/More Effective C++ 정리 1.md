@@ -1,9 +1,11 @@
+```js
 ---
 layout: post
 title: More Effective C++ 정리 1
-category: c++
-tags: [blog, jekyll, github.io, more, effective, c++, 정리]
+category: C++
+tags: [blog, jekyll, github.io]
 ---
+```
 
 ## 4. 객체를 사용하기전에 초기화 하자
 1. 기본 타입은 직접 초기화하자.
