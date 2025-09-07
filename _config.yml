@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Joogba's"
+title                    : "김성주 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Joogba"
@@ -117,9 +117,6 @@ author:
     - label: "Blog"
       icon : "fas fa-fw fa-link"
       url  : "https://joogba.github.io"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:tjdwn0802@naver.com"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/jrogba___/"
