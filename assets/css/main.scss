@@ -4,18 +4,23 @@
 
 @charset "utf-8";
 
-/* 글 전체 기본 폭(본문)과 wide일 때의 최대 폭 */
-$content-width: 1120px;   /* 기본 ~800px → 960px 정도 권장 */
-/* 본문 + 사이드바 너비 설정 */
-$right-sidebar-width: 260px;     /* TOC 칼럼 */
-$right-sidebar-width-narrow: 220px;
+
+/* ===== 레이아웃 폭 세팅 (원하는 느낌으로 숫자만 조절) ===== */
+$max-width: 1680px;         /* 페이지 전체 최대폭 (좌프로필 + 본문 + 우TOC 전부 포함) */
+$content-width: 1120px;     /* 본문 칼럼 폭 — 더 넓히고 싶으면 1160~1200도 OK */
+$right-sidebar-width: 300px;       /* 오른쪽 TOC 폭 */
+$right-sidebar-width-narrow: 260px;/* 브레이크포인트 하위에서의 TOC 폭 */
+$gutter: 36px;              /* 본문과 사이드바 사이 간격(기본=30px). 더 띄우고 싶으면 40~48 */
+
+/* (선택) 왼쪽 author 프로필 폭을 살짝 줄여 본문에 더 줘도 됨 */
+$left-sidebar-width: 260px; /* 기본 ~300px → 240~260px 권장 */
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
 /* 본문 공통 폰트 크기/행간 살짝 줄이기 */
 .page__content {
-  font-size: 0.95rem;   /* 기본 1rem → 0.95rem */
+  font-size: 0.8rem;   /* 기본 1rem → 0.95rem */
   line-height: 1.75;
 }
 
