@@ -1,6 +1,6 @@
 ---
 title: CPU RayTracing
-date: 2023-06-30
+date: 2023-12-01
 excerpt: glm, open mp 활용한 cpu 기반 레이트레이싱 
 
 # ✅ 썸네일(카드용)

@@ -1,6 +1,6 @@
 ---
 title: DirectX11 Renderer
-date: 2023-06-30
+date: 2024-01-01
 excerpt: PBR, PSO, SPH 등 렌더링 아키텍처 구현
 
 # ✅ 썸네일(카드용)

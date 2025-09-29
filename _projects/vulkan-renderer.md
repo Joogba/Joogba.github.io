@@ -4,7 +4,7 @@ date: 2025-07-01
 excerpt: 멀티-API RHI 설계·배리어 자동화·리소스 바인딩 모듈화
 layout: single
 categories: [Projects]
-tags: [Vulkan, RHI, Renderer, C++, GPU]
+tags: [Vulkan, Graphics, Renderer, C++, GPU]
 
 header:
   teaser: ../assets/images/projects/vulkanrenderer.png

@@ -18,7 +18,7 @@
 .proj-grid {
   display: grid;
   gap: 16px;                                   /* 20 -> 16 */
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  /* 320 -> 260 */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));  /* 320 -> 260 */
 }
 
 /* 폭이 충분하면 3열 고정 */
