@@ -260,6 +260,7 @@ compress_html:
 collections:
   projects:
     output: true
+    permalink: /projects/:path/
 
 defaults:
   # _posts 기본값
@@ -278,9 +279,10 @@ defaults:
   - scope: { path: "", type: projects }
     values:
       layout: single
-      author_profile: true
-      toc: true
-      toc_sticky: true
+      author_profile: false
+      read_time: false
+      share: false
+      related: false
 
   # (선택) pages에도 author 박스 보이게 하고 싶다면
   # - scope: { path: "", type: pages }
