@@ -7,8 +7,8 @@ categories: [Projects]
 tags: [Unity, C#, Puzzle, Combat]
 
 header:
-  teaser: /assets/images/projects/block_hero_thumb.jpg
-  overlay_image: /assets/images/projects/block_hero_hero.jpg
+  teaser: ../assets/images/projects/blockhero.png
+  overlay_image: ../assets/images/projects/blockhero.png
   overlay_filter: 0.3
 
 # links:

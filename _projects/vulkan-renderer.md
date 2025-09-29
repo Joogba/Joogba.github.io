@@ -7,8 +7,8 @@ categories: [Projects]
 tags: [Vulkan, RHI, Renderer, C++, GPU]
 
 header:
-  teaser: /assets/images/projects/vulkanrenderer.jpg
-  overlay_image: /assets/images/projects/vulkanrenderer.jpg
+  teaser: ../assets/images/projects/vulkanrenderer.png
+  overlay_image: ../assets/images/projects/vulkanrenderer.png
   overlay_filter: 0.3
 
 # links:

@@ -7,8 +7,8 @@ categories: [Projects]
 tags: [Unity, IK, Tooling, Docker, Node, MySQL]
 
 header:
-  teaser: /assets/images/projects/webtoon_thumb.jpg
-  overlay_image: /assets/images/projects/webtoon_hero.jpg
+  teaser: ../assets/images/projects/webtoon.png
+  overlay_image: ../assets/images/projects/webtoon.png
   overlay_filter: 0.3
 
 # links:

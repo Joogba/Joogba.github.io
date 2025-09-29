@@ -7,8 +7,8 @@ categories: [Projects]
 tags: [Unreal, UE5, C++, Multiplayer, GAS]
 
 header:
-  teaser: ../assets/images/projects/backpackrogue.jpg
-  overlay_image: ../assets/images/projects/backpackrogue.jpg
+  teaser: ../assets/images/projects/backpackrogue.png
+  overlay_image: ../assets/images/projects/backpackrogue.png
   overlay_filter: 0.3
 
 # links:
