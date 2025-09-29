@@ -5,10 +5,10 @@ excerpt: PBR, PSO, SPH 등 렌더링 아키텍처 구현
 
 # ✅ 썸네일(카드용)
 header:
-  teaser: /assets/images/projects/dx11renderer.png
+  teaser: ../assets/images/projects/dx11renderer.png
 
 # (선택) 상세 상단 히어로
-  overlay_image: /assets/images/projects/dx11renderer.png
+  overlay_image: ../assets/images/projects/dx11renderer.png
   overlay_filter: 0.3
 
 tags: [Graphics, DirectX11, C++]
