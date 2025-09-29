@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-layout: collection
+layout: archive
 collection: projects
 permalink: /projects/
 entries_layout: grid      # list 로 바꿔도 됨
