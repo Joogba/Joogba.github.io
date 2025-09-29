@@ -1,84 +1,29 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
 @charset "utf-8";
 
+/* 스킨은 문자열로 명시(변수/Liquid 없이) */
+@import "minimal-mistakes/skins/default";
 
-/* ===== 레이아웃 폭 세팅 (원하는 느낌으로 숫자만 조절) ===== */
-$max-width: 1680px;         /* 페이지 전체 최대폭 (좌프로필 + 본문 + 우TOC 전부 포함) */
-$content-width: 1120px;     /* 본문 칼럼 폭 — 더 넓히고 싶으면 1160~1200도 OK */
-$right-sidebar-width: 300px;       /* 오른쪽 TOC 폭 */
-$right-sidebar-width-narrow: 260px;/* 브레이크포인트 하위에서의 TOC 폭 */
-$gutter: 36px;              /* 본문과 사이드바 사이 간격(기본=30px). 더 띄우고 싶으면 40~48 */
+/* 테마 본체 */
+@import "minimal-mistakes";
 
-/* (선택) 왼쪽 author 프로필 폭을 살짝 줄여 본문에 더 줘도 됨 */
-$left-sidebar-width: 260px; /* 기본 ~300px → 240~260px 권장 */
-
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
-
-/* 본문 공통 폰트 크기/행간 살짝 줄이기 */
-.page__content {
-  font-size: 0.8rem;   /* 기본 1rem → 0.95rem */
-  line-height: 1.75;
-}
-
-/* (선택) 제목도 약간 줄이기 */
-.page__content h1 { font-size: 1.75rem; }
-.page__content h2 { font-size: 1.35rem; }
-.page__content h3 { font-size: 1.15rem; }
-
-/* (선택) 코드 블록이 크다면 */
-.highlighter-rouge pre, pre.highlight { font-size: 0.9rem; }
-
-/* (선택) 스티키 위치 미세 조정 */
-.sidebar__right.sticky { top: 72px; }
-
-
-/* === Project grid (custom) ================================================== */
+/* ===== 커스텀: 프로젝트 그리드 ===== */
 .proj-grid{
-  display: grid;
-  gap: 20px;
-  /* 기본은 1~2열, 넓어지면 3열까지 */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  display:grid; gap:20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
 }
-
-/* 최대 3열로 제한 */
-@media (min-width: 1200px){
-  .proj-grid{
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (min-width:1200px){
+  .proj-grid{ grid-template-columns: repeat(3,1fr); }
 }
-
-/* 카드 스타일 */
-.proj-card{
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  background: #fff;
-  overflow: hidden;
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s;
+.proj-card{ display:block; text-decoration:none; color:inherit;
+  border:1px solid #e5e7eb; border-radius:14px; background:#fff; overflow:hidden;
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s;
 }
-.proj-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
-  border-color: #d1d5db;
-}
-
-/* 썸네일 */
-.proj-card__thumb{
-  aspect-ratio: 16/9;      /* 이미지 비율 일정하게 */
-  background:#f3f4f6;
-  overflow: hidden;
-}
-.proj-card__thumb img{
-  width:100%; height:100%; object-fit:cover; display:block;
-}
-
-/* 본문 */
-.proj-card__body{ padding: 12px 14px; }
+.proj-card:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:#d1d5db; }
+.proj-card__thumb{ aspect-ratio:16/9; background:#f3f4f6; overflow:hidden; }
+.proj-card__thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.proj-card__body{ padding:12px 14px; }
 .proj-card__title{ margin:.2rem 0 .35rem; font-size:1.08rem; font-weight:700; }
 .proj-card__excerpt{ margin:0; color:#555; font-size:.93rem; line-height:1.4; }
