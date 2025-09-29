@@ -10,9 +10,10 @@ header:
 # (선택) 상세 상단 히어로
   overlay_image: ../assets/images/projects/dx11renderer.png
   overlay_filter: 0.3
-
+layout: single       # (권장) 상세 페이지 레이아웃
 tags: [Graphics, DirectX11, C++]
 categories: [Projects]
+
 ---
 
 ## 🎮 DirectX11 렌더러
