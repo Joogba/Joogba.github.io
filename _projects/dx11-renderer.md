@@ -13,7 +13,6 @@ header:
 layout: single       # (권장) 상세 페이지 레이아웃
 tags: [Graphics, DirectX11, C++]
 categories: [Projects]
-
 ---
 
 ## 🎮 DirectX11 렌더러
@@ -28,6 +27,9 @@ categories: [Projects]
     
 - **역할** : 전체 렌더링 아키텍처 설계 및 구현
     
+### 시연 영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rK0AfXBWJ7o" frameborder="0" allowfullscreen></iframe>
 
 ### 🎯 성과
 
