@@ -1,6 +1,7 @@
 ---
 title: "Projects"
-layout: default
+layout: single
+author_profile: true
 permalink: /projects/
 classes: wide
 #: grid      # list 로 바꿔도 됨
@@ -9,9 +10,8 @@ classes: wide
 ---
 
 
-# Projects
-
 ## Graphics
+<div class="proj-section">
 <div class="proj-grid">
 {% assign items = site.projects | where_exp:"p","p.tags contains 'Graphics'" | sort: 'date' | reverse %}
 {% for post in items %}
@@ -27,10 +27,14 @@ classes: wide
   </a>
 {% endfor %}
 </div>
+</div>
 
 ## Unreal
+<div class="proj-section">
 <div class="proj-grid">
-{% assign items = site.projects | where_exp:"p","p.tags contains 'Unreal' or p.tags contains 'UE5'" | sort: 'date' | reverse %}
+{% assign unreal_a = site.projects | where_exp:"p","p.tags contains 'Unreal'" %}
+{% assign unreal_b = site.projects | where_exp:"p","p.tags contains 'UE5'" %}
+{% assign items = unreal_a | concat: unreal_b | uniq | sort: 'date' | reverse %}
 {% for post in items %}
   {% assign teaser = post.header.teaser | default: site.teaser %}
   <a class="proj-card" href="{{ post.url | relative_url }}">
@@ -42,8 +46,10 @@ classes: wide
   </a>
 {% endfor %}
 </div>
+</div>
 
 ## Unity
+<div class="proj-section">
 <div class="proj-grid">
 {% assign items = site.projects | where_exp:"p","p.tags contains 'Unity'" | sort: 'date' | reverse %}
 {% for post in items %}
@@ -56,4 +62,5 @@ classes: wide
     </div>
   </a>
 {% endfor %}
+</div>
 </div>

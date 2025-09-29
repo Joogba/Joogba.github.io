@@ -7,13 +7,37 @@
 @import "minimal-mistakes/skins/default";
 @import "minimal-mistakes";
 
-/* === Project grid (custom) === */
-.proj-grid{ display:grid; gap:20px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
-@media (min-width:1200px){ .proj-grid{ grid-template-columns:repeat(3,1fr); } }
-.proj-card{ display:block; text-decoration:none; color:inherit; border:1px solid #e5e7eb; border-radius:14px; background:#fff; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s; }
-.proj-card:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:#d1d5db; }
+/* === Project grid (tuned) ================================================ */
+/* wide 처럼 중앙 정렬 + 너무 좌우로 퍼지지 않게 한 번 감싸기 */
+.proj-section {
+  max-width: 1200px;     /* wide 느낌 (원하면 1160~1280로 조절) */
+  margin-inline: auto;
+}
+
+/* 카드 크기 살짝 축소 + 3열까지만 */
+.proj-grid {
+  display: grid;
+  gap: 16px;                                   /* 20 -> 16 */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  /* 320 -> 260 */
+}
+
+/* 폭이 충분하면 3열 고정 */
+@media (min-width: 980px) {
+  .proj-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 카드 시각디자인도 살짝 컴팩트하게 */
+.proj-card{
+  display:block; text-decoration:none; color:inherit;
+  border:1px solid #e5e7eb; border-radius:12px;        /* 14 -> 12 */
+  background:#fff; overflow:hidden;
+  transition:transform .12s, box-shadow .12s, border-color .12s;
+}
+.proj-card:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08); border-color:#d1d5db; }
+
 .proj-card__thumb{ aspect-ratio:16/9; background:#f3f4f6; overflow:hidden; }
 .proj-card__thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-.proj-card__body{ padding:12px 14px; }
-.proj-card__title{ margin:.2rem 0 .35rem; font-size:1.08rem; font-weight:700; }
-.proj-card__excerpt{ margin:0; color:#555; font-size:.93rem; line-height:1.4; }
+
+.proj-card__body{ padding:10px 12px; }                 /* 12x14 -> 10x12 */
+.proj-card__title{ margin:.2rem 0 .3rem; font-size:1rem; font-weight:700; } /* 1.08rem -> 1rem */
+.proj-card__excerpt{ margin:0; color:#555; font-size:.9rem; line-height:1.45; }

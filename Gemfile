@@ -1,2 +1,4 @@
 source "https://rubygems.org"
-gemspec
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-include-cache"
+gem "webrick"   # Ruby 3.x에서 필요
