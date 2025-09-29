@@ -7,8 +7,8 @@ categories: [Projects]
 tags: [Unity, C#, Networking, Tools]
 
 header:
-  teaser: /assets/images/projects/busugi_thumb.jpg
-  overlay_image: /assets/images/projects/busugi_hero.jpg
+  teaser: /assets/images/projects/unitythumb.jpg
+  overlay_image: /assets/images/projects/unitythumb.jpg
   overlay_filter: 0.3
 
 # links:
