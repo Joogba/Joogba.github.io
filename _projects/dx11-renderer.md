@@ -3,9 +3,9 @@ title: DirectX11 Renderer
 date: 2023-06-30
 excerpt: PBR, PSO, SPH 등 렌더링 아키텍처 구현
 header:
-  overlay_image: /assets/img/projects/dx11renderer.jpg  # 상세 상단 히어로
+  overlay_image: /assets/images/projects/dx11renderer.png  # 상세 상단 히어로
   overlay_filter: 0.3
-thumb: /assets/img/projects/dx11renderer.png   # 카드 썸네일
+thumb: /assets/images/projects/dx11renderer.png   # 카드 썸네일
 tags: [Graphics, DirectX11, C++]
 categories: [Projects]
 ---
