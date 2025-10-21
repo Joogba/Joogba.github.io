@@ -21,8 +21,6 @@ header:
 
 ## 🧱 블록 히어로 (Block Hero)
 
-![[스크린샷 2025-09-24 002122.png|300]]
-
 - **기간** : 2016.03 – 2016.09
     
 - **인원** : 5명 (개발 2, 기획 1, 디자인 2)
@@ -32,63 +30,117 @@ header:
 - **역할** : 퍼즐 코어 로직 및 전투 시스템 구현, UI 연동
     
 
+현재 솔루션의 실제 구현 내용을 확인하여 정확한 정보로 수정해드리겠습니다. 먼저 코드베이스를 분석해보겠습니다.
+현재 솔루션을 분석한 결과를 바탕으로 정확한 내용으로 수정해드리겠습니다.
+
 ### 🎯 성과
 
 - **3-Match + 슬라이딩** 규칙을 결합한 퍼즐 코어 구현
     
-- 매치 결과가 실시간으로 전투 파라미터(데미지/게이지/콤보)에 반영되는 **퍼즐-전투 상호작용 루프** 완성
+- **스테이트 머신 기반** 게임 플로우 관리 (Wait → Move → Match → Create → SideMatch)
     
-- 스테이트 기반 **라운드/웨이브 진행 로직**과 간단한 **AI 타겟팅** 구축
+- 8x8 격자에서 **스와이프 기반 전체 라인 이동** 시스템 구축
     
 
 ### 🔑 주요 구현
 
 1. **퍼즐 시스템**
     
-    - 격자(Grid) 관리, 셀 스왑/슬라이드, 매치 탐색(가로/세로/연속)
+    - 8x8 격자 관리, 스와이프 방향 감지를 통한 **전체 라인 슬라이딩**
         
-    - 연쇄(Chain) 및 콤보 가중치, 특수 블록(폭발/라인 클리어) 생성 규칙
+    - 가로/세로 3-Match 탐색 및 **애니메이션 기반 블록 삭제/생성**
 
-```c#
-// 간단한 매치 탐색 스케치
-bool IsMatchAt(int x, int y) {
-    return (CountSame(x, y, 1, 0) + CountSame(x, y, -1, 0) - 1 >= 3) ||
-           (CountSame(x, y, 0, 1) + CountSame(x, y, 0, -1) - 1 >= 3);
+```csharp
+// 실제 매치 탐색 구현
+int CheckBlockoverHorizontal(int x, int y, int ox, int oy) {
+    if (x < 1 || x > 6) return 0;
+    if (mBlockArray[x, y].mType != mBlockArray[ox, oy].mType) return 0;
+    if (mBlockArray[x, y].isChecked == true) return 0;
+    
+    mBlockArray[x, y].isChecked = true;
+    tempBlockList.Add(mBlockArray[x, y]);
+    
+    return 1 + CheckBlockoverHorizontal(x - 1, y, ox, oy) + 
+               CheckBlockoverHorizontal(x + 1, y, ox, oy);
 }
 ```
 
-2. **전투 시스템**
+2. **스테이트 기반 게임플로우**
     
-    - 매치 결과 → **DamageEvent** 생산 → 적 HP 반영
+    - **GameState enum**을 통한 명확한 상태 관리
         
-    - 속성 상성/콤보 배수/스킬 게이지 증가 등 **전투 파라미터화**
-```c#
-void ApplyMatchResult(MatchInfo m) {
-    var damage = baseDamage * m.ComboMultiplier * ElementBonus(m.Element);
-    enemy.TakeDamage(damage);
-    playerGauge.Add(m.Gems);
+    - Wait → Move → Match → Create → SideMatch 순차 진행
+
+```csharp
+public enum GameState {
+    Wait, Move, Match, Create, SideMatch
+}
+
+void Update() {
+    switch(gamestate) {
+        case GameState.Wait:
+            // 터치 입력 처리 및 매치 검사
+            break;
+        case GameState.Move:
+            // 스와이프에 따른 라인 이동
+            break;
+        case GameState.Match:
+            // 매치된 블록들 삭제 애니메이션
+            break;
+        // ...
+    }
 }
 ```
 
-3. **퍼즐-전투 상호작용**
+3. **스와이프 기반 라인 이동**
     
-    - 퍼즐 보드와 전투 매니저를 **이벤트 버스**로 decouple
+    - 터치 방향 감지로 **전체 행/열 순환 이동**
         
-    - 보드 → (MatchEvent) → CombatManager / UI / SFX 동시 반응
-        
-4. **UI/UX & 이펙트**
+    - 사이드 블록 생성/삭제를 통한 **무한 순환** 구조
+
+```csharp
+void MoveUp(int xPos) {
+    for (int i = 0; i < 7; i++) {
+        mBlockArray[xPos, i] = mBlockArray[xPos, i + 1];
+        mBlockArray[xPos, i + 1].MoveAnimation(new Vector2(0, 1));
+    }
+    mBlockArray[xPos, 7] = null;
+}
+```
+
+4. **애니메이션 시스템**
     
-    - 콤보 카운트/게이지/스킬 버튼 연동
+    - **코루틴 기반** 이동/삭제/생성 애니메이션
         
-    - 매치·폭발·스킬 사용 시 피드백(애니메이션/사운드) 정합성 유지
-        
+    - 애니메이션 완료 시점의 **상태 전환 트리거**
+
+```csharp
+IEnumerator DeleteCoroutine() {
+    float startTime = Time.time;
+    Vector2 orgVec = transform.localScale;
+    
+    while (Time.time - startTime <= 0.2f) {
+        transform.localScale = Vector2.Lerp(orgVec, Vector2.zero, 
+            (Time.time - startTime) / 0.2f);
+        yield return null;
+    }
+    
+    isMatched = true;
+    if (Blockmng.gamestate != BlockManager.GameState.Create) {
+        Blockmng.gamestate = BlockManager.GameState.Create;
+    }
+}
+```
 
 ### 📚 배운 점 & 개선점
 
-- 퍼즐 규칙과 전투 파라미터의 **데이터 구동 설계** 필요성 체감(ScriptableObject 등으로 외부화 권장)
+- **스테이트 머신 패턴**을 통한 복잡한 게임 플로우 관리의 효과성 확인
     
-- 보드 연산(탐색/중력/리필) 최적화와 **프레임 일관성** 확보의 중요성
+- **코루틴 기반 애니메이션**과 상태 전환의 동기화 중요성 체감
     
+- 현재는 퍼즐 전용 구현으로, **전투 시스템과의 연동** 및 **이벤트 시스템** 도입 필요
+    
+- **.NET Framework 3.5** 환경에서의 최적화와 **GC 최소화** 고려사항 발견
     
 
 ### 🔗 참고 링크

@@ -17,8 +17,6 @@ categories: [Projects]
 
 ## 🎮 DirectX11 렌더러
 
-![[스크린샷 2025-05-27 213156.png|500]]
-
 - **기간** : 2025.01 – 2025.06
     
 - **인원** : 개인 프로젝트
@@ -65,5 +63,4 @@ categories: [Projects]
 ### 🔗 참고 링크
 
 - [시연 영상 (YouTube)](https://youtu.be/rK0AfXBWJ7o)
-- [블로그 상세 설명](https://blog.naver.com/tjdwn0802/223865556039)
-- [GitHub 저장소](https://github.com/)
+- [블로그](https://blog.naver.com/tjdwn0802/223865556039)
