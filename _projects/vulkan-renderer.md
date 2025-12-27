@@ -1,7 +1,7 @@
 ---
-title: BinRenderer (Vulkan/멀티-API RHI)
+title: BinRenderer (Vulkan)
 date: 2025-07-01
-excerpt: 멀티-API RHI 설계·배리어 자동화·리소스 바인딩 모듈화
+excerpt: 셰이더 리플렉션, 바인드리스 디스크립터
 layout: single
 categories: [Projects]
 tags: [Vulkan, Graphics, Renderer, C++, GPU]
@@ -34,7 +34,7 @@ header:
 
 - **Render Graph 시스템**을 JSON 기반으로 구현하여 복잡한 렌더링 파이프라인을 데이터 주도적으로 구성
     
-- **SSAO(화면 공간 환경광 차폐)**, **지연 셰이딩(Deferred Shading)**, **PBR 머티리얼** 등 최신 그래픽스 기능 구현
+- **SSAO(화면 공간 환경광 차폐)**, **지연 셰이딩(Deferred Shading)** 기능 구현
     
 - **셰이더 리플렉션**과 **Config 클래스 기반 파이프라인 관리**로 하드코딩 최소화 및 유지보수성 향상
     
@@ -75,7 +75,7 @@ header:
         
     - **Half Precision** 사용으로 메모리 사용량 절감
         
-    - **GPU 시간측정 & Tracy 연동**을 통한 성능 모니터링 및 병목 구간 분석
+    - **GPU 시간측정 & Tracy 연동**을 통한 성능 모니터링
         
 
 ---
@@ -106,7 +106,7 @@ header:
     Vulkan 중심 구조에서 **DirectX12까지 지원하는 멀티 API 렌더링 아키텍처**로 확장
     
 - **게임엔진 적용**  
-    본 렌더링 라이브러리를 기반으로 **게임엔진 렌더링 모듈**에 통합하여 실사용 검증
+    본 렌더링 라이브러리를 실사용 가능하도록 빌드, 문서화 개선
     
 
 ---
