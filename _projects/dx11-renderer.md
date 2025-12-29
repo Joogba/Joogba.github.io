@@ -29,6 +29,10 @@ categories: [Projects]
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rK0AfXBWJ7o" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qnc6s2O58Jw" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w4kibsMxH04" frameborder="0" allowfullscreen></iframe>
+
 ### 🎯 성과
 
 - **PBR 렌더링** 구현으로 현실감 있는 머티리얼 표현 달성

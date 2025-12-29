@@ -36,6 +36,8 @@ header:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QOCWEXl7bXA" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gwSEHo_-U5U" frameborder="0" allowfullscreen></iframe>
+
 ### 🎯 성과
 
 - **Dedicated Server 기반 멀티플레이 구조** 구축 및 RPC/Replication 활용

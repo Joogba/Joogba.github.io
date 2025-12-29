@@ -29,9 +29,9 @@ header:
     
 - **역할** : 퍼즐 코어 로직 및 전투 시스템 구현, UI 연동
     
+### 시연 영상
 
-현재 솔루션의 실제 구현 내용을 확인하여 정확한 정보로 수정해드리겠습니다. 먼저 코드베이스를 분석해보겠습니다.
-현재 솔루션을 분석한 결과를 바탕으로 정확한 내용으로 수정해드리겠습니다.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ki5UoWxGf88" frameborder="0" allowfullscreen></iframe>
 
 ### 🎯 성과
 

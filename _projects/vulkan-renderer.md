@@ -26,7 +26,14 @@ header:
 - **기술 스택** : C++, Vulkan, GLSL, SPIR-V, assimp, Tracy
     
 - **역할** : 전체 렌더링 아키텍처 설계 및 구현
+
+---
     
+### 시연 영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JkHT7ba9AjU" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iVkXFh8zXic" frameborder="0" allowfullscreen></iframe>
 
 ---
 
