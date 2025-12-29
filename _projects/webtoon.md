@@ -29,6 +29,11 @@ header:
     
 - **역할** : 뷰어 클라이언트 개발, Full Body IK 적용, 스토리보드 툴 구현
     
+---
+
+### 시연 영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lv2iRuSi9Mk" frameborder="0" allowfullscreen></iframe>
 
 ---
 
